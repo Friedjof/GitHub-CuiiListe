@@ -6,7 +6,7 @@ on:
       - main
   schedule:
     - cron: '*/30 * * * *'
-  workflow_dispatch: # Adds a manual trigger in the GitHub Actions UI
+  workflow_dispatch:
 
 jobs:
   update-blocklist:
@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests tabulate dnspython
+        pip install -r requirements.txt
 
     - name: Run update script
       run: python update.py
