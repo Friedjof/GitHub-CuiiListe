@@ -6,6 +6,7 @@ on:
       - main
   schedule:
     - cron: '*/30 * * * *'
+  workflow_dispatch: # Adds a manual trigger in the GitHub Actions UI
 
 jobs:
   update-blocklist:
@@ -17,8 +18,6 @@ jobs:
 
     - name: Set up Python
       uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
 
     - name: Install dependencies
       run: |
